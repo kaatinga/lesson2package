@@ -8,7 +8,7 @@ import (
 // UserInput implements user data input
 func UserInput(minimum, maximum int64)  int64 {
 	p := log.Println // the alias for log.Print in order to simplify the code
-	input := 0
+	var input int64
 	p("Please, enter a number from", minimum, "to", maximum, ":")
 	for {
 		fmt.Scan(&input)
@@ -25,7 +25,7 @@ func UserInput(minimum, maximum int64)  int64 {
 // IfEven recognises even and odd numbers
 func IfEven() {
 	p := log.Println // the alias for log.Print in order to simplify the code
-	input = 0
+	var input int64
 	var intRange int64 = 9223372036854775807
 	p("Enter a number:")
 	input := UserInput(intRange*-1, intRange)
