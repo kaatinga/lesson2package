@@ -28,7 +28,7 @@ func IfEven() {
 	var input int64
 	var intRange int64 = 9223372036854775807
 	p("Enter a number:")
-	input := UserInput(intRange*-1, intRange)
+	input = UserInput(intRange*-1, intRange)
 	if input%2 == 0 {
 		p("The entered number is even!")
 	} else {
@@ -39,10 +39,10 @@ func IfEven() {
 // IfDevisionHasRemainder finds devision remainder
 func IfDevisionHasRemainder() {
 	p := log.Println // the alias for log.Print in order to simplify the code
-	input = 0
+	var input int64
 	var intRange int64 = 9223372036854775807
 	p("Enter a number:")
-	input := UserInput(intRange*-1, intRange)
+	input = UserInput(intRange*-1, intRange)
 	if input%3 == 0 {
 		p(input, "/ 3 has no remainder!")
 	} else {
