@@ -5,14 +5,10 @@ import (
 	"log"
 )
 
-var input int64 // the variable to keep input option
-
-var tasks [4]string // the array of tasks will be here
-
 // UserInput implements user data input
-func UserInput(minimum, maximum int64) {
+func UserInput(minimum, maximum int64)  int64 {
 	p := log.Println // the alias for log.Print in order to simplify the code
-	input = 0
+	input := 0
 	p("Please, enter a number from", minimum, "to", maximum, ":")
 	for {
 		fmt.Scan(&input)
@@ -23,6 +19,7 @@ func UserInput(minimum, maximum int64) {
 			p("The data input has been wrong. Please, repeat:")
 		}
 	}
+	return input
 }
 
 // IfEven recognises even and odd numbers
@@ -31,7 +28,7 @@ func IfEven() {
 	input = 0
 	var intRange int64 = 9223372036854775807
 	p("Enter a number:")
-	UserInput(intRange*-1, intRange)
+	input := UserInput(intRange*-1, intRange)
 	if input%2 == 0 {
 		p("The entered number is even!")
 	} else {
@@ -45,7 +42,7 @@ func IfDevisionHasRemainder() {
 	input = 0
 	var intRange int64 = 9223372036854775807
 	p("Enter a number:")
-	UserInput(intRange*-1, intRange)
+	input := UserInput(intRange*-1, intRange)
 	if input%3 == 0 {
 		p(input, "/ 3 has no remainder!")
 	} else {
